@@ -1,0 +1,52 @@
+body {
+    background-color: #ffe0e9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Keeps hearts from creating scroll bars */
+}
+
+.container {
+    text-align: center;
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+h1 { color: #d63384; }
+
+button {
+    font-size: 1.2rem;
+    padding: 10px 25px;
+    margin: 10px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#yesBtn { background-color: #ff4d6d; color: white; }
+
+#noBtn {
+    background-color: #adb5bd;
+    color: white;
+    position: absolute; /* Needed for the "run away" effect */
+}
+
+/* Floating Heart Animation */
+.heart {
+    position: absolute;
+    color: #ff4d6d;
+    font-size: 20px;
+    animation: float 4s linear infinite;
+    top: 100vh;
+}
+
+@keyframes float {
+    to { transform: translateY(-110vh) rotate(360deg); }
+}
