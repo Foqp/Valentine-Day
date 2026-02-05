@@ -81,3 +81,10 @@ function createConfetti() {
 
     setTimeout(() => confetti.remove(), 3000);
 }
+// --- PREVENT CLOSING THE TAB ---
+window.addEventListener('beforeunload', (event) => {
+    // Note: Modern browsers don't allow custom text anymore for security, 
+    // but this WILL trigger the browser's standard "Are you sure you want to leave?" pop-up.
+    event.preventDefault();
+    event.returnValue = ''; 
+});
