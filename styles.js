@@ -24,3 +24,21 @@ noBtn.addEventListener('mouseover', () => {
         noBtn.style.display = 'none';
     }
 });
+
+function celebrate() {
+    // 1. Send the notification to your email via Formspree
+    fetch("https://formspree.io/f/xqedzpny", { // PASTE YOUR URL HERE
+        method: "POST",
+        body: JSON.stringify({
+            message: "THEY SAID YES! ❤️",
+            time: new Date().toLocaleString()
+        }),
+        headers: {
+            'Accept': 'application/json'
+        }
+    });
+
+    // 2. Show the success message on the screen
+    alert("YAY! Best decision ever! ❤️");
+    document.querySelector('.container').innerHTML = "<h1>It's a Date! 🥂</h1><p>Check your email (I just sent you one!)</p>";
+}
